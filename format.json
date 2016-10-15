@@ -2,28 +2,36 @@
     "special-font-letters": {
         "blackboard-bold": {
             "prefix": "b",
-            "command": "mathbb"
+            "command": "mathbb",
+            "lower": false,
+            "alternative": ["f"]
         },
 
         "mathcal": {
-            "prefix": "c",
-            "command": "mathcal"
+            "prefix": "h",
+            "command": "mathcal",
+            "lower": false,
+            "alternative": ["t"]
         },
 
         "mathscr": {
-            "prefix": "s",
-            "command": "mathscr"
+            "prefix": "k",
+            "command": "mathscr",
+            "lower": false
         },
 
         "sans-serif": {
-            "prefix": "n",
-            "command": "sf"
+            "prefix": "r",
+            "command": "sf",
+            "lower": true,
+            "alternative": ["m", "q"]
         },
 
         "fraktur": {
             "prefix": "f",
             "command": "mathfrak",
-            "lower": true
+            "lower": true,
+            "alternative": ["i"]
         }
     },
 
@@ -116,7 +124,7 @@
                     "comment": "",
                     "full-expr": "\\mathcal O_L"
                 },
-                "kp": {
+                "kpp": {
                     "comment": "",
                     "full-expr": "K_\\pp"
                 },
@@ -293,11 +301,6 @@
                 "coker": {
                     "comment": "cokernel",
                     "upper": false
-                },
-                "cclim": {
-                    "comment": "Limits",
-                    "text": "lim",
-                    "custom-face": "sf"
                 },
                 "im": {
                     "comment": "im"
