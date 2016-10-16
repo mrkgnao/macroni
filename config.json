@@ -1,0 +1,332 @@
+{
+    "sections": {
+        "algebra": {
+            "expression-aliases": {},
+            "math-operators": {
+                "Frob": {
+                    "comment": "Frobenius morphism"
+                },
+                "gal": {
+                    "comment": "Galois group of a field extension"
+                }
+            },
+            "newcommands": {
+                "fix": {
+                    "arity": 1,
+                    "command": "\\text{Fix}(#1)",
+                    "comment": "fix"
+                },
+                "ut": {
+                    "arity": 1,
+                    "command": "{#1}^\\times",
+                    "comment": "Unit group of a ring"
+                }
+            }
+        },
+        "algebraic-geometry": {
+            "expression-aliases": {
+                "ox": {
+                    "comment": "Sheaf of regular functions on X",
+                    "full-expr": "\\mathcal{O}_X"
+                },
+                "shv": {
+                    "comment": "Category of sheaves over some space",
+                    "full-expr": "{\\sf {Shv}}"
+                }
+            },
+            "math-operators": {
+                "proj": {
+                    "comment": "Proj of a graded ring"
+                },
+                "spec": {
+                    "comment": "Spectrum of a commutative ring"
+                }
+            },
+            "newcommands": {
+                "Akn": {
+                    "arity": 1,
+                    "command": " {\\Bbb A}_k^#1",
+                    "comment": "Affine space of degree $n$ over $k$"
+                },
+                "An": {
+                    "arity": 1,
+                    "command": " {\\Bbb A}^#1",
+                    "comment": "Affine space of degree $n$"
+                },
+                "I": {
+                    "arity": 1,
+                    "command": "\\mathcal{I}(#1)",
+                    "comment": "Ideal of an algebraic set"
+                },
+                "V": {
+                    "arity": 1,
+                    "command": "\\mathcal{V}(#1)",
+                    "comment": "Vanishing set of an ideal"
+                }
+            }
+        },
+        "algebraic-number-theory": {
+            "expression-aliases": {
+                "Tr": {
+                    "comment": "Trace of an algebraic number",
+                    "full-expr": "\\text{Tr} "
+                },
+                "clk": {
+                    "comment": "Class group of a number field",
+                    "full-expr": "\\Cl K"
+                },
+                "clok": {
+                    "comment": "Class group of the ring of integers",
+                    "full-expr": "\\Cl \\ok"
+                },
+                "ffq": {
+                    "comment": "Finite field of order q",
+                    "full-expr": "{\\mathbb F}_q"
+                },
+                "galfp": {
+                    "comment": "Absolute Galois group of \\F_p",
+                    "full-expr": "\\gal {\\overline{\\F_p} } {\\F p} "
+                },
+                "galqp": {
+                    "comment": "Absolute Galois group of \\Q_p",
+                    "full-expr": "\\gal {\\overline{\\Q_p} } {\\Q_p} "
+                },
+                "idok": {
+                    "comment": "",
+                    "full-expr": "\\Id \\ok"
+                },
+                "kpp": {
+                    "comment": "",
+                    "full-expr": "K_\\pp"
+                },
+                "ok": {
+                    "comment": "Ring of integers of K",
+                    "full-expr": "\\mathcal O_K"
+                },
+                "ol": {
+                    "comment": "Ring of integers of L",
+                    "full-expr": "\\mathcal O_L"
+                },
+                "prinok": {
+                    "comment": "Principal divisors",
+                    "full-expr": "\\Prin \\ok"
+                }
+            },
+            "newcommands": {
+                "Cl": {
+                    "arity": 1,
+                    "command": "\\text{Cl}(#1)",
+                    "comment": "Cl"
+                },
+                "Id": {
+                    "arity": 1,
+                    "command": "\\text{Id}(#1)",
+                    "comment": "Id"
+                },
+                "Nm": {
+                    "arity": 1,
+                    "command": "\\text{Nm}(#1)",
+                    "comment": "Nm"
+                },
+                "Prin": {
+                    "arity": 1,
+                    "command": "\\text{Prin}(#1)",
+                    "comment": "Prin"
+                },
+                "ab": {
+                    "arity": 1,
+                    "command": "#1^{\\text{ab} } ",
+                    "comment": "ab"
+                },
+                "oo": {
+                    "arity": 1,
+                    "command": "\\mathcal O_{#1} ",
+                    "comment": "oo"
+                },
+                "ur": {
+                    "arity": 1,
+                    "command": "#1^{\\text{ur} } ",
+                    "comment": "ur"
+                }
+            }
+        },
+        "algebraic-topology": {
+            "expression-aliases": {
+                "Ix": {
+                    "comment": "Any index category",
+                    "full-expr": " {\\sf{I} } "
+                },
+                "Top": {
+                    "comment": "Category of topological spaces",
+                    "full-expr": " {\\sf{Top} } "
+                },
+                "Topi": {
+                    "comment": "A category of diagrams of shape I in Top",
+                    "full-expr": " {\\Top^\\Ix} "
+                },
+                "cocc": {
+                    "comment": "Cofibrations in a model category",
+                    "full-expr": "co\\CC"
+                },
+                "fcc": {
+                    "comment": "Fibrations in a model category",
+                    "full-expr": "f\\CC"
+                },
+                "hTop": {
+                    "comment": "Homotopy category of $\\Top$",
+                    "full-expr": " {\\sf{hTop} } "
+                },
+                "wcc": {
+                    "comment": "Weak equivalences in a model category",
+                    "full-expr": "w\\CC"
+                }
+            },
+            "math-operators": {
+                "hocolim": {
+                    "comment": "Homotopy colimit",
+                    "custom-face": "sf"
+                },
+                "holim": {
+                    "comment": "Homotopy limit",
+                    "custom-face": "sf"
+                }
+            }
+        },
+        "category-theory": {
+            "expression-aliases": {
+                "isom": {
+                    "comment": "",
+                    "full-expr": "\\overset\\sim \\longrightarrow"
+                },
+                "ob": {
+                    "comment": "",
+                    "full-expr": " {\\sf{ob} } "
+                }
+            },
+            "math-operators": {
+                "Ext": {
+                    "comment": "Ext functor"
+                },
+                "Tor": {
+                    "comment": "Tor functor"
+                },
+                "cclim": {
+                    "comment": "Limit",
+                    "custom-face": "sf",
+                    "text": "lim"
+                },
+                "colim": {
+                    "comment": "Colimit",
+                    "custom-face": "sf"
+                }
+            },
+            "newcommands": {
+                "hhom": {
+                    "arity": 1,
+                    "command": " {\\sf{Hom} }(#1,-)",
+                    "comment": "hhom"
+                },
+                "homm": {
+                    "arity": 1,
+                    "command": " {\\sf{Hom} }(-,#1)",
+                    "comment": "homm"
+                },
+                "homs": {
+                    "arity": 3,
+                    "command": "Hom_{#1}({#2},[#3])",
+                    "comment": "Hom-sets in a category"
+                }
+            }
+        },
+        "general": {
+            "expression-aliases": {
+                "Grp": {
+                    "comment": "",
+                    "full-expr": " {\\sf{Grp} } "
+                },
+                "Ring": {
+                    "comment": "",
+                    "full-expr": " {\\sf{Ring} } "
+                },
+                "Set": {
+                    "comment": "",
+                    "full-expr": " {\\sf{Set} } "
+                },
+                "Zgt": {
+                    "comment": "Nonnegative integers",
+                    "full-expr": "{\\mathbb{Z}}^{\\geq0}"
+                },
+                "Zi": {
+                    "comment": "Gaussian integers",
+                    "full-expr": "{\\mathbb{Z}}[i]"
+                }
+            },
+            "math-operators": {
+                "Aut": {
+                    "comment": "Aut"
+                },
+                "coker": {
+                    "comment": "cokernel",
+                    "upper": false
+                },
+                "id": {
+                    "comment": "id"
+                },
+                "im": {
+                    "comment": "im"
+                },
+                "lcm": {
+                    "comment": "lcm"
+                }
+            },
+            "newcommands": {
+                "bkt": {
+                    "arity": 1,
+                    "command": "\\langle #1 \\rangle",
+                    "comment": "bkt"
+                },
+                "bull": {
+                    "arity": 1,
+                    "command": "A_\\bullet",
+                    "comment": "bull"
+                },
+                "chn": {
+                    "arity": 1,
+                    "command": "C_\\bullet(#1)",
+                    "comment": "chn"
+                }
+            }
+        }
+    },
+    "special-font-letters": {
+        "blackboard-bold": {
+            "alternative": ["f"],
+            "command": "mathbb",
+            "lower": false,
+            "prefix": "b"
+        },
+        "fraktur": {
+            "alternative": ["i"],
+            "command": "mathfrak",
+            "lower": true,
+            "prefix": "f"
+        },
+        "mathcal": {
+            "alternative": ["t"],
+            "command": "mathcal",
+            "lower": false,
+            "prefix": "h"
+        },
+        "mathscr": {
+            "command": "mathscr",
+            "lower": false,
+            "prefix": "k"
+        },
+        "sans-serif": {
+            "alternative": ["m", "q"],
+            "command": "sf",
+            "lower": true,
+            "prefix": "r"
+        }
+    }
+}

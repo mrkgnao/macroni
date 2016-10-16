@@ -12,10 +12,10 @@ output_file.write("""
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 """.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
 
-format_file = open("./format.json", "r")
-format = json.load(format_file)
+config_file = open("./config.json", "r")
+config = json.load(config_file)
 
-special_fonts = format['special-font-letters']
+special_fonts = config['special-font-letters']
 
 output_file.write("""
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,7 +35,7 @@ for font_name in special_fonts.keys():
     font_prefix = font["prefix"]
 
     output_file.write("%%% \\{}*: {} (\\{})\n".format(font_prefix, font_name,
-                                                     font_command))
+                                                      font_command))
 
 output_file.write("""%%%--------------------------------------
 """)
@@ -101,7 +101,7 @@ output_file.write("""
 %%% topic-wise macros
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 """)
-sections = format['sections']
+sections = config['sections']
 
 output_file.write("\n")
 
@@ -142,8 +142,8 @@ for topic in sections.keys():
 
             if "custom-face" in op_data:
                 output_file.write(
-                    "\\newcommand{{\\{op}}}{{\\{custom_face}{{{op}}}}}\n\n".
-                    format(
+                    "\\newcommand{{\\{op}}}{{\\{custom_face}{{{op}}}}}\n\n"
+                    .format(
                         op=op, custom_face=op_data["custom-face"]))
             else:
                 if "star" in op_data and op_data["star"]:
@@ -168,3 +168,32 @@ for topic in sections.keys():
                 ncmd, ncmd_data['full-expr']))
     except KeyError as k:
         pass
+
+    if "newcommands" in topic_format:
+        newcommands = topic_format['newcommands']
+        output_file.write('%%% newcommands\n\n')
+        for ncmd in newcommands.keys():
+            try:
+                ncmd_data = newcommands[ncmd]
+                try:
+                    arity = ncmd_data['arity']
+                except KeyError:
+                    print(
+                        "No arity provided for newcommand {}, defaulting to 1"
+                        .format(ncmd))
+                    arity = 1
+                    config["sections"][topic]["newcommands"][ncmd]["arity"] = 1
+                cmd = ncmd_data['command']
+                comment = ncmd_data['comment']
+
+                output_file.write("% {}\n".format(comment))
+                output_file.write(
+                    "\\newcommand{{\\{ncmd}}}[{arity}]{{{cmd}}}\n\n".format(
+                        arity=arity, cmd=cmd, ncmd=ncmd))
+            except KeyError as k:
+                print("Error while processing newcommand {}".format(ncmd))
+                print(k.__repr__())
+
+config_file.close()
+config_file = open("./config.json", "w")
+json.dump(config, config_file, sort_keys=True)
