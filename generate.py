@@ -4,6 +4,8 @@ import json
 from string import ascii_uppercase, ascii_lowercase
 from datetime import datetime
 
+print("Starting Macroni generator...")
+
 output_file = open("./generated-preamble.tex", "w+")
 output_file.write("""
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,7 +135,7 @@ for topic in sections.keys():
                 upper = True
 
             if "text" in op_data:
-                txt = op_data["text"]
+                text = op_data["text"]
             else:
                 if upper:
                     text = op.capitalize()
@@ -142,9 +144,9 @@ for topic in sections.keys():
 
             if "custom-face" in op_data:
                 output_file.write(
-                    "\\newcommand{{\\{op}}}{{\\{custom_face}{{{op}}}}}\n\n"
+                    "\\newcommand{{\\{op}}}{{\\{custom_face}{{{text}}}}}\n\n"
                     .format(
-                        op=op, custom_face=op_data["custom-face"]))
+                        op=op, custom_face=op_data["custom-face"], text=text))
             else:
                 if "star" in op_data and op_data["star"]:
                     output_file.write(
@@ -196,4 +198,4 @@ for topic in sections.keys():
 
 config_file.close()
 config_file = open("./config.json", "w")
-json.dump(config, config_file, sort_keys=True)
+json.dump(config, config_file, indent=4, sort_keys=True)

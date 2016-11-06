@@ -1,13 +1,54 @@
 {
     "sections": {
         "algebra": {
-            "expression-aliases": {},
-            "math-operators": {
-                "Frob": {
-                    "comment": "Frobenius morphism"
+            "expression-aliases": {
+                "fldk": {
+                    "comment": "Category of extensions of the field $k$",
+                    "full-expr": "{\\sf Fld}_k"
                 },
-                "gal": {
+                "galLK": {
+                    "comment": "Galois group of $L$ over $K$",
+                    "full-expr": "{\\mathrm{Gal}}(L/K)"
+                },
+                "galfctk": {
+                    "comment": "Galois group functor",
+                    "full-expr": "{\\mathrm {Gal}}(-/k)"
+                },
+                "galk": {
+                    "comment": "Galois group of $K$ over $k$",
+                    "full-expr": "{\\mathrm{Gal}}(K/k)"
+                },
+                "gall": {
+                    "comment": "Galois group of $L$ over $k$",
+                    "full-expr": "{\\mathrm{Gal}}(L/k)"
+                },
+                "zmz": {
+                    "comment": "$Z$ mod m",
+                    "full-expr": "{\\mathbb Z}/m{\\mathbb Z}"
+                },
+                "zmzt": {
+                    "comment": "Unit group of $Z$ mod m",
+                    "full-expr": "{ ({\\mathbb Z}/m{\\mathbb Z}) }^{\\times}"
+                },
+                "znz": {
+                    "comment": "$Z$ mod n",
+                    "full-expr": "{\\mathbb Z}/n{\\mathbb Z}"
+                },
+                "znzt": {
+                    "comment": "Unit group of $Z$ mod n",
+                    "full-expr": "{ ({\\mathbb Z}/n{\\mathbb Z}) }^{\\times}"
+                }
+            },
+            "math-operators": {
+                "Gal": {
                     "comment": "Galois group of a field extension"
+                },
+                "fld": {
+                    "comment": "The category of fields",
+                    "custom-face": "sf"
+                },
+                "frob": {
+                    "comment": "Frobenius morphism"
                 }
             },
             "newcommands": {
@@ -16,10 +57,20 @@
                     "command": "\\text{Fix}(#1)",
                     "comment": "fix"
                 },
+                "gal": {
+                    "arity": 2,
+                    "command": "{\\mathrm {Gal}}({#1}/{#2})",
+                    "comment": "Galois group"
+                },
                 "ut": {
                     "arity": 1,
                     "command": "{#1}^\\times",
                     "comment": "Unit group of a ring"
+                },
+                "zmod": {
+                    "arity": 1,
+                    "command": "{\\mathbb Z}/#1{\\mathbb Z}",
+                    "comment": "Z mod something"
                 }
             }
         },
@@ -71,6 +122,42 @@
                     "comment": "Trace of an algebraic number",
                     "full-expr": "\\text{Tr} "
                 },
+                "adf": {
+                    "comment": "Adele ring of F",
+                    "full-expr": "{\\mathbb A}_{F}"
+                },
+                "adft": {
+                    "comment": "Idele group of F",
+                    "full-expr": "{\\mathbb A}_{F}^\times"
+                },
+                "adk": {
+                    "comment": "Adele ring of K",
+                    "full-expr": "{\\mathbb A}_{K}"
+                },
+                "adkt": {
+                    "comment": "Idele group of K",
+                    "full-expr": "{\\mathbb A}_{K}^\times"
+                },
+                "adq": {
+                    "comment": "Adele ring of Q",
+                    "full-expr": "{\\mathbb A}_{\\mathbb Q}"
+                },
+                "adqt": {
+                    "comment": "Idele group of Q",
+                    "full-expr": "{\\mathbb A}_{\\mathbb Q}^\times"
+                },
+                "adz": {
+                    "comment": "Adele ring of Z",
+                    "full-expr": "{\\mathbb A}_{\\mathbb Z}"
+                },
+                "agq": {
+                    "comment": "Absolute Galois group of $\\bq$",
+                    "full-expr": "\\Gamma"
+                },
+                "agqab": {
+                    "comment": "Absolute Galois group of $\\bq$",
+                    "full-expr": "{\\Gamma}^{\\mathrm{ab}}"
+                },
                 "clk": {
                     "comment": "Class group of a number field",
                     "full-expr": "\\Cl K"
@@ -79,17 +166,37 @@
                     "comment": "Class group of the ring of integers",
                     "full-expr": "\\Cl \\ok"
                 },
+                "fab": {
+                    "comment": "Maximal abelian extension of $F$",
+                    "full-expr": "{\\mathbb F}^{\\mathrm{ab}}"
+                },
                 "ffq": {
                     "comment": "Finite field of order q",
                     "full-expr": "{\\mathbb F}_q"
                 },
-                "galfp": {
-                    "comment": "Absolute Galois group of \\F_p",
-                    "full-expr": "\\gal {\\overline{\\F_p} } {\\F p} "
+                "galf": {
+                    "comment": "Absolute Galois group of F",
+                    "full-expr": "{\\mathrm{Gal}}({\\overline{F} }/{F})"
+                },
+                "galfab": {
+                    "comment": "Abelianization of the absolute Galois group of F",
+                    "full-expr": "{\\mathrm{Gal}}({{F}^{\\mathrm {ab}} }/{F})"
+                },
+                "galq": {
+                    "comment": "Absolute Galois group of \\Q",
+                    "full-expr": "{\\mathrm{Gal}}({\\overline{\\bq} }/{\\bq})"
+                },
+                "galqab": {
+                    "comment": "Abelianization of the absolute Galois group of \\Q",
+                    "full-expr": "{\\mathrm{Gal}}({\\bq}^{\\mathrm {ab}}/{\\bq})"
                 },
                 "galqp": {
                     "comment": "Absolute Galois group of \\Q_p",
-                    "full-expr": "\\gal {\\overline{\\Q_p} } {\\Q_p} "
+                    "full-expr": "{\\mathrm{Gal}}({\\overline{\\bq_p} }/{\\bq_p})"
+                },
+                "galqpab": {
+                    "comment": "Abelianization of the absolute Galois group of \\Q_p",
+                    "full-expr": "{\\mathrm{Gal}}({{\\bq_p}^{\\mathrm {ab}} }/{\\bq_p})"
                 },
                 "idok": {
                     "comment": "",
@@ -110,6 +217,30 @@
                 "prinok": {
                     "comment": "Principal divisors",
                     "full-expr": "\\Prin \\ok"
+                },
+                "qab": {
+                    "comment": "Maximal abelian extension of $\bq$",
+                    "full-expr": "{\\mathbb Q}^{\\mathrm{ab}}"
+                },
+                "qp": {
+                    "comment": "p-adic rationals",
+                    "full-expr": "{\\mathbb Q}_p"
+                },
+                "qzetn": {
+                    "comment": "Cyclotomic field",
+                    "full-expr": "{\\mathbb Q}(\\zeta_n)"
+                },
+                "zhat": {
+                    "comment": "Profinite completion of Z",
+                    "full-expr": "\\hat{\\mathbb Z}"
+                },
+                "zp": {
+                    "comment": "p-adic rationals",
+                    "full-expr": "{\\mathbb Z}_p"
+                },
+                "zpt": {
+                    "comment": "p-adic rationals",
+                    "full-expr": "{\\mathbb Z}_p^\\times"
                 }
             },
             "newcommands": {
@@ -142,6 +273,11 @@
                     "arity": 1,
                     "command": "\\mathcal O_{#1} ",
                     "comment": "oo"
+                },
+                "qzet": {
+                    "arity": 1,
+                    "command": "{\\mathbb Q}(\\zeta_#1)",
+                    "comment": "Cyclotomic field"
                 },
                 "ur": {
                     "arity": 1,
@@ -235,23 +371,16 @@
                     "arity": 3,
                     "command": "Hom_{#1}({#2},[#3])",
                     "comment": "Hom-sets in a category"
+                },
+                "opp": {
+                    "arity": 1,
+                    "command": "#1^{\\sf{op}}",
+                    "comment": "Opposite category"
                 }
             }
         },
         "general": {
             "expression-aliases": {
-                "Grp": {
-                    "comment": "",
-                    "full-expr": " {\\sf{Grp} } "
-                },
-                "Ring": {
-                    "comment": "",
-                    "full-expr": " {\\sf{Ring} } "
-                },
-                "Set": {
-                    "comment": "",
-                    "full-expr": " {\\sf{Set} } "
-                },
                 "Zgt": {
                     "comment": "Nonnegative integers",
                     "full-expr": "{\\mathbb{Z}}^{\\geq0}"
@@ -259,6 +388,11 @@
                 "Zi": {
                     "comment": "Gaussian integers",
                     "full-expr": "{\\mathbb{Z}}[i]"
+                },
+                "bull": {
+                    "arity": 1,
+                    "command": "A_\\bullet",
+                    "comment": "bull"
                 }
             },
             "math-operators": {
@@ -269,6 +403,10 @@
                     "comment": "cokernel",
                     "upper": false
                 },
+                "grp": {
+                    "comment": "",
+                    "custom-face": "sf"
+                },
                 "id": {
                     "comment": "id"
                 },
@@ -277,42 +415,61 @@
                 },
                 "lcm": {
                     "comment": "lcm"
+                },
+                "ring": {
+                    "comment": "",
+                    "custom-face": "sf"
+                },
+                "set": {
+                    "comment": "",
+                    "custom-face": "sf"
                 }
             },
             "newcommands": {
+                "adj": {
+                    "arity": 1,
+                    "command": "\\mathrm{adj}(#1)",
+                    "comment": "Adjoint matrix"
+                },
                 "bkt": {
                     "arity": 1,
                     "command": "\\langle #1 \\rangle",
                     "comment": "bkt"
                 },
-                "bull": {
-                    "arity": 1,
-                    "command": "A_\\bullet",
-                    "comment": "bull"
-                },
                 "chn": {
                     "arity": 1,
                     "command": "C_\\bullet(#1)",
                     "comment": "chn"
+                },
+                "dr": {
+                    "arity": 3,
+                    "command": "#1\\colon #2\\to #3",
+                    "comment": "Functions/functors"
                 }
             }
         }
     },
     "special-font-letters": {
         "blackboard-bold": {
-            "alternative": ["f"],
+            "alternative": [
+                "f"
+            ],
             "command": "mathbb",
             "lower": false,
             "prefix": "b"
         },
         "fraktur": {
-            "alternative": ["i"],
+            "alternative": [
+                "i"
+            ],
             "command": "mathfrak",
             "lower": true,
             "prefix": "f"
         },
         "mathcal": {
-            "alternative": ["t"],
+            "alternative": [
+                "t"
+            ],
             "command": "mathcal",
             "lower": false,
             "prefix": "h"
@@ -323,7 +480,10 @@
             "prefix": "k"
         },
         "sans-serif": {
-            "alternative": ["m", "q"],
+            "alternative": [
+                "m",
+                "q"
+            ],
             "command": "sf",
             "lower": true,
             "prefix": "r"
