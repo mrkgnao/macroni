@@ -49,6 +49,9 @@
                 },
                 "frob": {
                     "comment": "Frobenius morphism"
+                },
+                "ord": {
+                    "comment": "Order of an element"
                 }
             },
             "newcommands": {
@@ -198,6 +201,10 @@
                     "comment": "Abelianization of the absolute Galois group of \\Q_p",
                     "full-expr": "{\\mathrm{Gal}}({{\\bq_p}^{\\mathrm {ab}} }/{\\bq_p})"
                 },
+                "gk": {
+                    "comment": "Absolute Galois group of K",
+                    "full-expr": "{\\mathrm{Gal}}({\\overline{K} }/{K})"
+                },
                 "idok": {
                     "comment": "",
                     "full-expr": "\\Id \\ok"
@@ -214,6 +221,14 @@
                     "comment": "Ring of integers of L",
                     "full-expr": "\\mathcal O_L"
                 },
+                "op": {
+                    "comment": "Ring of p-integers",
+                    "full-expr": "{\\mathcal O}_\\fP"
+                },
+                "pp": {
+                    "comment": "Fraktur p",
+                    "full-expr": "\\fP"
+                },
                 "prinok": {
                     "comment": "Principal divisors",
                     "full-expr": "\\Prin \\ok"
@@ -225,6 +240,14 @@
                 "qp": {
                     "comment": "p-adic rationals",
                     "full-expr": "{\\mathbb Q}_p"
+                },
+                "qq": {
+                    "comment": "Fraktur q",
+                    "full-expr": "\\fQ"
+                },
+                "qt": {
+                    "comment": "Unit group of Q",
+                    "full-expr": "{\\mathbb Q}^\times"
                 },
                 "qzetn": {
                     "comment": "Cyclotomic field",
@@ -283,6 +306,16 @@
                     "arity": 1,
                     "command": "#1^{\\text{ur} } ",
                     "comment": "ur"
+                },
+                "val": {
+                    "arity": 2,
+                    "command": "|#1|_{#2}",
+                    "comment": "Valuations"
+                },
+                "vval": {
+                    "arity": 1,
+                    "command": "|#1|",
+                    "comment": "Valuations"
                 }
             }
         },
@@ -381,18 +414,21 @@
         },
         "general": {
             "expression-aliases": {
-                "Zgt": {
+                "bull": {
+                    "comment": "bull",
+                    "full-expr": "A_\\bullet"
+                },
+                "rgt": {
+                    "comment": "Positive reals",
+                    "full-expr": "{\\mathbb{R}}^{>0}"
+                },
+                "zge": {
                     "comment": "Nonnegative integers",
                     "full-expr": "{\\mathbb{Z}}^{\\geq0}"
                 },
-                "Zi": {
+                "zi": {
                     "comment": "Gaussian integers",
                     "full-expr": "{\\mathbb{Z}}[i]"
-                },
-                "bull": {
-                    "arity": 1,
-                    "command": "A_\\bullet",
-                    "comment": "bull"
                 }
             },
             "math-operators": {
